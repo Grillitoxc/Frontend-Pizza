@@ -1,0 +1,35 @@
+:root {
+    --dark: #16191c;
+    --dark-x: #1e2126;
+    --light: #ffffff;
+    --orange: #ff4400;
+    --green-light: #38a13c;
+    --red-pastel: #ebc4c4;
+    --red-main: #ff3835;
+    --red-main-shadow1: #7f2121;
+    --red-main-shadow2: #a5211f;
+}
+
+.footer {
+    padding: 50px 0px;
+    background: var(--red-pastel);
+}
+
+.footer__logo img {
+    width: calc(100% - 50%); 
+    margin-bottom: 5px;
+}
+
+.schedule__list {
+    background: transparent;
+} 
+
+.schedule__item {
+    background: transparent !important;
+}
+
+.schedule__item span {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--dark);
+}
