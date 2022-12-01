@@ -1,0 +1,46 @@
+:root {
+  --dark: #16191c;
+  --dark-x: #1e2126;
+  --light: #ffffff;
+  --orange: #ff4400;
+  --green-light: #38a13c;
+  --red-pastel: #ebc4c4;
+  --red-main: #ff3835;
+  --red-main-light: #f95c5a;
+  --red-main-shadow1: #7f2121;
+  --red-main-shadow2: #a5211f;
+  --red-icons: #df2020;
+  --red-icons-hover: #ff3835;
+}
+
+.category {
+  background: var(--red-main);
+  text-align: center;
+  margin-top: 30px;
+  padding: 20px 0;
+  border-radius: 10px;
+}
+
+.category button {
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 7px 20px;
+  color: var(--light);
+}
+
+.category img {
+  width: 40px;
+  height: 40px;
+}
+
+.category button:hover {
+  background: var(--red-main-light);
+  border-radius: 10px;
+}
+
+.BtnActive {
+  background: var(--light) !important;
+  border-radius: 10px;
+  color: var(--red-main) !important;
+}

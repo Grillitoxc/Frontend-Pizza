@@ -2,17 +2,17 @@ import React, { useRef } from "react";
 
 import { Container } from "reactstrap";
 import { NavLink, Link } from "react-router-dom";
-import logo from "../../assets/images/logo8.png";
+import logo from "../../assets/images/logo.png";
 
 import "../../styles/header.css";
 
 const nav__links = [
   {
-    display: "Home",
-    path: "/home",
+    display: "Menú",
+    path: "/menu",
   },
   {
-    display: "Pizzas",
+    display: "Menú",
     path: "/pizzas",
   },
   {
@@ -65,7 +65,7 @@ const Header = () => {
 
             <span className="map__icon">
               <Link to="/login">
-                <i class="ri-map-pin-line"></i>
+                <i className="ri-map-pin-line"></i>
               </Link>
             </span>
 

@@ -1,35 +1,117 @@
 :root {
-    --dark: #16191c;
-    --dark-x: #1e2126;
-    --light: #ffffff;
-    --orange: #ff4400;
-    --green-light: #38a13c;
-    --red-pastel: #ebc4c4;
-    --red-main: #ff3835;
-    --red-main-shadow1: #7f2121;
-    --red-main-shadow2: #a5211f;
+  --dark: #16191c;
+  --dark-x: #1e2126;
+  --light: #ffffff;
+  --orange: #ff4400;
+  --green-light: #38a13c;
+  --red-pastel: #ebc4c4;
+  --red-main: #ff3835;
+  --red-main-light: #f95c5a;
+  --red-main-shadow1: #7f2121;
+  --red-main-shadow2: #a5211f;
+  --red-icons: #df2020;
+  --red-icons-hover: #ff3835;
 }
 
 .footer {
-    padding: 50px 0px;
-    background: var(--red-pastel);
+  padding: 50px 0px 20px 0px;
+  background: var(--red-main-light);
 }
 
 .footer__logo img {
-    width: calc(100% - 50%); 
-    margin-bottom: 5px;
+  width: calc(100% - 10%);
+  margin-top: 30px;
 }
 
-.schedule__list {
-    background: transparent;
-} 
-
-.schedule__item {
-    background: transparent !important;
+.list__item {
+  background: transparent !important;
 }
 
-.schedule__item span {
-    font-weight: 600;
-    font-size: 1rem;
-    color: var(--dark);
+.list__item a,
+p {
+  color: var(--light);
+  font-size: 0.9rem;
+}
+
+.list__item a:hover {
+  color: var(--light);
+  text-decoration: underline;
+}
+
+.footer__title {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--light);
+}
+
+.subscribe {
+  padding: 5px;
+  border: 1px solid var(--light);
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.subscribe input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--light);
+}
+
+.subscribe input:focus {
+  outline: none;
+}
+
+.subscribe span {
+  background: var(--red-icons);
+  padding: 5px 30px;
+  border-radius: 5px;
+}
+
+.subscribe span:hover {
+  background: var(--red-icons-hover);
+  padding: 3px 28px;
+  border: 2px solid var(--light);
+}
+
+.subscribe span i {
+  color: var(--light);
+}
+
+.subscribe input::placeholder {
+  color: var(--light);
+}
+
+.social__links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.social__links span i {
+  padding: 15px;
+  background: var(--red-icons);
+  color: var(--light);
+  border-radius: 50%;
+}
+
+.social__links span i:hover {
+  background: var(--red-icons-hover);
+  padding: 18px;
+  border: 2px solid var(--light);
+  transition: 0.07s;
+}
+
+.sub__footer {
+  background-color: var(--red-main-shadow2);
+  padding: 15px 0px;
+  font-size: 0.8rem;
+  color: var(--light);
+  text-align: center;
+  justify-self: start;
 }
