@@ -65,7 +65,7 @@ const Footer = () => {
               <div className="subscribe">
                 <input type="email" placeholder="Email" />
                 <span>
-                  <i class="ri-mail-line"></i>
+                  <i className="ri-mail-line"></i>
                 </span>
               </div>
 

@@ -5,7 +5,7 @@ import "../styles/pizza_card.css";
 import { Link } from "react-router-dom";
 
 const PizzaCard = (props) => {
-  const { title, image, price } = props.item;
+  const { name, image, price } = props.item;
 
   return (
     <div className="pizza__card">
@@ -14,9 +14,9 @@ const PizzaCard = (props) => {
       </div>
       <div className="pizza__card__content">
         <h5>
-          <Link>{title}</Link>
+          <Link>{name}</Link>
         </h5>
-        <div>
+        <div className="d-flex justify-content-between align-items-center">
           <span className="pizza__card__price">${price}</span>
           <button className="pizza__card__btn">Añadir al carrito</button>
         </div>

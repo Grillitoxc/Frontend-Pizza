@@ -12,11 +12,11 @@ const nav__links = [
     path: "/menu",
   },
   {
-    display: "Menú",
+    display: "Arma tu pizza",
     path: "/pizzas",
   },
   {
-    display: "Cart",
+    display: "Promociones online",
     path: "/cart",
   },
   {
