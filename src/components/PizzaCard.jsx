@@ -4,8 +4,23 @@ import "../styles/pizza_card.css";
 
 import { Link } from "react-router-dom";
 
+import { useDispatch } from "react-redux";
+import { cartActions } from "../store/shopping-cart/cartSlice.js";
+
 const PizzaCard = (props) => {
-  const { name, image, price } = props.item;
+  const { id, name, image, price } = props.item;
+  const dispatch = useDispatch();
+
+  const addToCart = () => {
+    dispatch(
+      cartActions.addItem({
+        id,
+        name,
+        image,
+        price,
+      })
+    );
+  };
 
   return (
     <div className="pizza__card">
@@ -18,7 +33,7 @@ const PizzaCard = (props) => {
         </h5>
         <div className="d-flex justify-content-between align-items-center">
           <span className="pizza__card__price">${price}</span>
-          <button className="pizza__card__btn">Añadir al carrito</button>
+          <button className="pizza__card__btn" onClick={addToCart}>Añadir al carrito</button>
         </div>
       </div>
     </div>

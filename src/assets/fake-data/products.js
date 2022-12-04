@@ -2,14 +2,14 @@ import pizza_americana from "./fake-images/americana.svg";
 import pizza_bbq_chicken from "./fake-images/bbq_chicken.svg";
 import pizza_campesina from "./fake-images/campesina.svg";
 import pizza_mechada_bbq from "./fake-images/mechada_bbq.svg";
-import pizza_chicken_tomato from "./fake-images/chicken_tomato.svg";
+import pizza_chicken_mix from "./fake-images/chicken_tomato.svg";
 import pizza_solo_queso from "./fake-images/solo_queso.svg";
 import pizza_pepperoni from "./fake-images/pepperoni.svg";
 import pizza_tomate_queso from "./fake-images/tomate_queso.svg";
 import pizza_vegan_queen from "./fake-images/vegan_queen.svg";
 import pizza_hawaiana from "./fake-images/hawaiana.svg";
 import pizza_jamon_supreme from "./fake-images/jamon_supreme.svg";
-import pizza_tomate_pimenton from "./fake-images/tomate_pimenton.svg";
+import pizza_red_gardem from "./fake-images/tomate_pimenton.svg";
 
 import cocacola from "./fake-images/cocacola.svg";
 import pepsi from "./fake-images/pepsi.svg";
@@ -61,7 +61,7 @@ const products = [
   },
   {
     id: 5,
-    name: "Tomate y Queso",
+    name: "Tomate-Queso",
     price: 12000,
     image: pizza_tomate_queso,
     description:
@@ -88,9 +88,9 @@ const products = [
   },
   {
     id: 8,
-    name: "Tomate y Pimentón",
+    name: "Red Garden",
     price: 12500,
-    image: pizza_tomate_pimenton,
+    image: pizza_red_gardem,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris.",
     category: "pizzas",
@@ -115,9 +115,9 @@ const products = [
   },
   {
     id: 11,
-    name: "Pollo y Tomate",
+    name: "Chicken Mix",
     price: 12990,
-    image: pizza_chicken_tomato,
+    image: pizza_chicken_mix,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris.",
     category: "pizzas",

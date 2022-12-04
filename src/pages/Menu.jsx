@@ -13,13 +13,10 @@ import products from "../assets/fake-data/products.js";
 import PizzaCard from "../components/PizzaCard.jsx";
 
 const Menu = () => {
-  const [category, setCategory] = useState("all");
+  const [category, setCategory] = useState("pizza");
   const [allProducts, setAllProducts] = useState(products);
 
   useEffect(() => {
-    if (category === "all") {
-      setAllProducts(products);
-    }
     if (category === "pizza") {
       const filteredProducts = products.filter(
         (item) => item.category === "pizzas"

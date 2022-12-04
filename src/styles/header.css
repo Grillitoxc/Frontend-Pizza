@@ -91,11 +91,14 @@ a:link {
   display: none;
 }
 
-.header__shrink {
+.sticky {
   position: sticky;
   top: 0;
   left: 0;
-  box-shadow: 5px 5px 15px -5px #fde4e4;
+  background: var(--light);
+  box-shadow: 5px 5px 15px -5px var(--red-main);
+  z-index: 999;
+  height: 110px;
 }
 
 @media only screen and (max-width: 1080px) {
