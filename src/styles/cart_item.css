@@ -1,0 +1,61 @@
+:root {
+  --dark: #16191c;
+  --dark-x: #1e2126;
+  --light: #ffffff;
+  --orange: #ff4400;
+  --green-light: #15aa49;
+  --green-dark1: #004d03;
+  --green-dark2: #017405;
+  --red-pastel: #ebc4c4;
+  --red-main: #ff3835;
+  --red-main-light: #f95c5a;
+  --red-main-light2: #f7b9b8;
+  --red-main-shadow1: #7f2121;
+  --red-main-shadow2: #a5211f;
+  --red-icons: #df2020;
+  --red-icons-hover: #ff3835;
+}
+
+.cart__item {
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--red-main-light);
+}
+
+.cart__item img {
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+}
+
+.cart__product__title {
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.cart__product__price {
+  font-size: 0.8rem;
+  color: var(--dark);
+}
+
+.cart__product__price span {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--red-main);
+}
+
+.increase__decrease__btn {
+  background: var(--red-main-light2);
+  padding: 2px 5px;
+  border-radius: 5px;
+}
+
+.increase__btn,
+.decrease__btn {
+  cursor: pointer;
+}
+
+.delete__btn {
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
