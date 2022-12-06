@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 
 import Helmet from "../components/Helmet/Helmet.js";
+import CommonSection from "../components/CommonSection";
+
 import { Container, Row, Col } from "react-bootstrap";
 
 import "../styles/menu.css";
@@ -40,14 +42,12 @@ const Menu = () => {
   return (
     <Helmet title=" - Menú">
       {/* ======= menu ======= */}
+      <CommonSection title="Menú" />
       <section>
         <Container>
           <Row>
-            <Col lg="12" className="text-center">
-              <h2>Pizzas</h2>
-            </Col>
             <Col lg="12">
-              <div className="category d-flex justify-content-center align-items-center gap-5 mb-4">
+              <div className="category d-flex justify-content-center align-items-center gap-5">
                 <button
                   className={`d-flex align-items-center gap-2 
                   ${category === "pizza" ? "BtnActive" : ""} `}

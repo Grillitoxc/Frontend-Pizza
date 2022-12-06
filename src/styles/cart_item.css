@@ -28,17 +28,17 @@
 }
 
 .cart__product__title {
-  font-size: 0.8rem;
-  font-weight: 400;
+  font-size: 1.1rem;
+  font-weight: 500;
 }
 
 .cart__product__price {
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: var(--dark);
 }
 
 .cart__product__price span {
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--red-main);
 }

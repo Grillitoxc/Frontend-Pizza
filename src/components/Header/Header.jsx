@@ -18,7 +18,7 @@ const nav__links = [
     path: "/pizzas",
   },
   {
-    display: "Promociones online",
+    display: "Tus pedidos",
     path: "/cart",
   },
   {
@@ -59,7 +59,7 @@ const Header = () => {
         <div className="nav__wrapper d-flex align-items-center justify-content-between">
           <div className="logo">
             <img src={logo} alt="logo" />
-            <h5>Delicious Pizza</h5>
+            <h5>Tingeso's Pizza</h5>
           </div>
 
           {/* ======= menu ======= */}
@@ -81,7 +81,7 @@ const Header = () => {
           </div>
 
           {/* ======== nav right icons ======== */}
-          <div className="nav__right d-flex align-items-center gap-4">
+          <div className="nav__right d-flex align-items-center gap-5">
             <span className="cart__icon" onClick={toogleCart}>
               <i className="ri-shopping-basket-line"></i>
               <span className="cart__badge">{totalQuantity}</span>

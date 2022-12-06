@@ -1,0 +1,148 @@
+:root {
+  --dark: #16191c;
+  --dark-x: #1e2126;
+  --light: #ffffff;
+  --orange: #ff4400;
+  --green-light: #15aa49;
+  --green-dark1: #004d03;
+  --green-dark2: #017405;
+  --red-pastel: #ebc4c4;
+  --red-main: #ff3835;
+  --red-main-light: #f95c5a;
+  --red-main-shadow1: #7f2121;
+  --red-main-shadow2: #a5211f;
+  --red-icons: #df2020;
+  --red-icons-hover: #ff3835;
+}
+
+table {
+  right: 50%;
+  left: 50%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  box-shadow: 0 2px 15px rgba(64, 64, 64, 0.7);
+  border-radius: 12px 12px 12px 12px;
+  overflow: hidden;
+  text-align: center;
+}
+
+th {
+  background-color: var(--red-main) !important;
+  color: var(--light);
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+tr {
+  width: 100%;
+  background-color: #fafafa;
+}
+
+tr:nth-child(even) {
+  background-color: #eeeeee;
+}
+
+td {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 1.1rem;
+}
+
+.cart__img-box {
+  width: 80px;
+}
+
+.cart__img-box img {
+  width: 100%;
+}
+
+.cart__item-del i {
+  cursor: pointer;
+  color: var(--light);
+  border-radius: 50%;
+  background-color: var(--red-main-light);
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+.cart__item-del i:hover {
+  box-shadow: 0 0 0 2px var(--dark), 0 0 0 4px var(--dark);
+}
+
+.cart__page-btn button a:hover {
+  color: var(--light);
+}
+
+.cart__subtotal {
+  color: var(--red-main);
+  font-size: 1.5rem;
+}
+
+.addTOCart__btn1 {
+  background: var(--red-main);
+  color: var(--light);
+  border: none;
+  padding: 5px 5px;
+  border-radius: 5px;
+  font-size: 1rem;
+  -webkit-transition: all ease 0.5s;
+  -moz-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+}
+
+.addTOCart__btn1:hover {
+  background: var(--red-main-shadow1);
+  color: var(--light);
+}
+
+.addTOCart__btn1 a {
+  color: var(--light);
+  background: transparent !important;
+}
+
+.addTOCart__btn2 {
+  background: var(--green-light);
+  color: var(--light);
+  border: none;
+  padding: 5px 5px;
+  border-radius: 5px;
+  font-size: 1rem;
+  -webkit-transition: all ease 0.5s;
+  -moz-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+}
+
+.addTOCart__btn2:hover {
+  background: var(--green-dark1);
+  color: var(--light);
+}
+
+.addTOCart__btn2 a {
+  color: var(--light);
+  background: transparent !important;
+}
+
+.empty__cart {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+b {
+  color: var(--red-main);
+}
+
+.subtotal h6 {
+  font-size: 1.4rem;
+}
+
+.subtotal p {
+  font-size: 1.2rem;
+  color: var(--dark);
+}
+
+@media only screen and (max-width: 768px) {
+  th,
+  td {
+    font-size: 0.8rem;
+  }
+}

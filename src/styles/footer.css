@@ -13,6 +13,10 @@
   --red-icons-hover: #ff3835;
 }
 
+.father {
+  margin-top: auto;
+}
+
 .footer {
   padding: 50px 0px 20px 0px;
   background: var(--red-main-light);
@@ -116,4 +120,3 @@ p {
   text-align: center;
   margin-bottom: auto;
 }
-

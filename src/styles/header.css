@@ -29,22 +29,22 @@ a:link {
 }
 
 .logo img {
-  width: 8rem;
+  width: 10.4rem;
   object-fit: contain;
   margin-top: 10px;
 }
 
 .logo h5 {
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: var(--dark-x);
   margin-top: 0px;
-  margin-bottom: 0;
+  margin-bottom: 5px;
 }
 
 .menu a {
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: var(--dark-x);
   transition: 0.3s;
 }
@@ -61,7 +61,7 @@ a:link {
 .user i,
 .map__icon i,
 .mobile__menu i {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   color: var(--dark-x);
   cursor: pointer;
 }
@@ -98,7 +98,7 @@ a:link {
   background: var(--light);
   box-shadow: 5px 5px 15px -5px var(--red-main);
   z-index: 999;
-  height: 110px;
+  height: 130px;
 }
 
 @media only screen and (max-width: 1080px) {

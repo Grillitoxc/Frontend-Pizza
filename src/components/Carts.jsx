@@ -2,7 +2,8 @@ import React from "react";
 
 import { ListGroup } from "reactstrap";
 import { Link } from "react-router-dom";
-import CartItem from "./CartItem.jsx";
+import CartItem from "./CartItem";
+
 import { useDispatch, useSelector } from "react-redux";
 import { cartUiActions } from "../store/shopping-cart/cartUiSlice";
 
@@ -10,40 +11,42 @@ import "../styles/shopping_cart.css";
 
 const Carts = () => {
   const dispatch = useDispatch();
-  const cartProducts = useSelector(state => state.cart.cartItems);
+  const cartProducts = useSelector((state) => state.cart.cartItems);
+  const totalAmount = useSelector((state) => state.cart.totalAmount);
 
   const toggleCart = () => {
     dispatch(cartUiActions.toggle());
   };
-
   return (
     <div className="cart__container">
       <ListGroup className="cart">
         <div className="cart__close">
           <span onClick={toggleCart}>
-            <i className="ri-close-fill"></i>
+            <i class="ri-close-fill"></i>
           </span>
         </div>
 
         <div className="cart__item__list">
           {cartProducts.length === 0 ? (
-            <h6 className="text-center mt-5">
-              No hay productos añadidos al carrito aún.
+            <h6 className="text-center mt-5 no__products">
+              No hay productos añadidos aún ¡Prueba añadiendo al carrito una
+              <b> pizza</b>!
             </h6>
           ) : (
             cartProducts.map((item, index) => (
-              <CartItem key={index} item={item} />
+              <CartItem item={item} key={index} />
             ))
           )}
-          <CartItem />
         </div>
 
-        <div className="cart__bottom d-flex justify-content-between align-items-center">
+        <div className="cart__bottom d-flex align-items-center justify-content-between">
           <h6>
-            Subtotal: <span>$123</span>
+            Subtotal : <span>${totalAmount}</span>
           </h6>
           <button>
-            <Link to="/checkout">Ir a pagar</Link>
+            <Link to="/cart" onClick={toggleCart}>
+              Ver pedidos
+            </Link>
           </button>
         </div>
       </ListGroup>
