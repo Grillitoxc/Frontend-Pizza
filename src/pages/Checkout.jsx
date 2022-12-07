@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Col, Container, Row } from "reactstrap";
 import CommonSection from "../components/CommonSection";
 import Helmet from "../components/Helmet/Helmet";
@@ -8,134 +8,243 @@ import "../styles/checkout.css";
 
 const Checkout = () => {
   const cartTotalAmount = useSelector((state) => state.cart.totalAmount);
-  const shippingCost = 30;
-  const totalAmount = cartTotalAmount + Number(shippingCost);
+  const [shippingCost, setShippingCost] = useState(0);
+  const [tipCost, setTipCost] = useState(0);
+  const tipAmount = Number(cartTotalAmount*tipCost)
+  const totalAmount = cartTotalAmount + Number(shippingCost) + tipAmount;
+
+  const handleShippingCost = (e) => {
+    console.log(e.target.value);
+    setShippingCost(e.target.value);
+  };
+
+  const handleTipCost = (e) => {
+    console.log(e.target.value);
+    setTipCost(e.target.value);
+  };
 
   return (
-    <Helmet title="Checkout">
-      <CommonSection title="Checkout" />
+    <Helmet title=" - Pago">
+      <CommonSection title="Finalizando pedido" />
       <section>
         <Container>
           <Row>
             <Col lg="8" md="6">
-              <h6 className="mb-4">Shipping Address</h6>
+              <h6 className="shipping__adress">Datos de envío</h6>
               <form className="checkout__form">
-                <div class="page">
-                  <div class="field field_v2">
-                    <label for="first-name" class="ha-screen-reader">
+                <div className="page">
+                  <div className="field field_v2">
+                    <label htmlFor="first-name" className="ha-screen-reader">
                       Nombre
                     </label>
                     <input
                       id="first-name"
-                      class="field__input"
+                      className="field__input"
                       placeholder="ej. Juan"
                       type="text"
                       required
                     ></input>
-                    <span class="field__label-wrap" aria-hidden="true">
-                      <span class="field__label">Nombre</span>
+                    <span className="field__label-wrap" aria-hidden="true">
+                      <span className="field__label">Nombre</span>
                     </span>
                   </div>
 
-                  <div class="field field_v2">
-                    <label for="first-name" class="ha-screen-reader">
+                  <div className="field field_v2">
+                    <label htmlFor="first-name" className="ha-screen-reader">
                       Apellido
                     </label>
                     <input
                       id="last-name"
-                      class="field__input"
+                      className="field__input"
                       placeholder="ej. Torres"
                       type="text"
                       required
                     ></input>
-                    <span class="field__label-wrap" aria-hidden="true">
-                      <span class="field__label">Apellido</span>
+                    <span className="field__label-wrap" aria-hidden="true">
+                      <span className="field__label">Apellido</span>
                     </span>
                   </div>
 
-                  <div class="field field_v2">
-                    <label for="first-name" class="ha-screen-reader">
+                  <div className="field field_v2">
+                    <label htmlFor="first-name" className="ha-screen-reader">
                       Email
                     </label>
                     <input
                       id="email"
-                      class="field__input"
+                      className="field__input"
                       placeholder="ej. juantorres@gmail.com"
                       type="email"
                       required
                     ></input>
-                    <span class="field__label-wrap" aria-hidden="true">
-                      <span class="field__label">Email</span>
+                    <span className="field__label-wrap" aria-hidden="true">
+                      <span className="field__label">Email</span>
                     </span>
                   </div>
 
-                  <div class="field field_v2">
-                    <label for="first-number" class="ha-screen-reader">
+                  <div className="field field_v2">
+                    <label htmlFor="first-number" className="ha-screen-reader">
                       Número de contacto
                     </label>
                     <input
                       id="number"
-                      class="field__input"
+                      className="field__input"
                       placeholder="ej. +569 1234 5678"
                       type="number"
                       required
                     ></input>
-                    <span class="field__label-wrap" aria-hidden="true">
-                      <span class="field__label">Número de contacto</span>
+                    <span className="field__label-wrap" aria-hidden="true">
+                      <span className="field__label">Número de contacto</span>
                     </span>
                   </div>
 
-                  <div class="field field_v2">
-                    <label for="region" class="ha-screen-reader">
+                  <div className="field field_v2">
+                    <label htmlFor="region" className="ha-screen-reader">
                       Región
                     </label>
                     <input
                       id="region"
-                      class="field__input"
+                      className="field__input"
                       placeholder="ej. Región Metropolitana"
                       type="text"
                       required
                     ></input>
-                    <span class="field__label-wrap" aria-hidden="true">
-                      <span class="field__label">Región</span>
+                    <span className="field__label-wrap" aria-hidden="true">
+                      <span className="field__label">Región</span>
                     </span>
                   </div>
 
-                  <div class="field field_v2">
-                    <label for="ciudad" class="ha-screen-reader">
+                  <div className="field field_v2">
+                    <label htmlFor="ciudad" className="ha-screen-reader">
                       Ciudad
                     </label>
                     <input
                       id="ciudad"
-                      class="field__input"
+                      className="field__input"
                       placeholder="ej. Santiago"
                       type="text"
                       required
                     ></input>
-                    <span class="field__label-wrap" aria-hidden="true">
-                      <span class="field__label">Ciudad</span>
+                    <span className="field__label-wrap" aria-hidden="true">
+                      <span className="field__label">Ciudad</span>
                     </span>
                   </div>
 
-                  <div class="field field_v2">
-                    <label for="provincia" class="ha-screen-reader">
+                  <div className="field field_v2">
+                    <label htmlFor="provincia" className="ha-screen-reader">
                       Provincia
                     </label>
                     <input
                       id="provincia"
-                      class="field__input"
+                      className="field__input"
                       placeholder="ej. Maipo"
                       type="text"
                       required
                     ></input>
-                    <span class="field__label-wrap" aria-hidden="true">
-                      <span class="field__label">Provincia</span>
+                    <span className="field__label-wrap" aria-hidden="true">
+                      <span className="field__label">Provincia</span>
                     </span>
                   </div>
                 </div>
+
+                {/* ========= checks ========= */}
+                <h6 className="shipping__adress">Tipo de envío</h6>
+                <div className="delivery__options">
+                  <div className="form-check">
+                    <input
+                      className="form-check-input"
+                      type="radio"
+                      name="flexRadioDefault"
+                      id="flexRadioDefault1"
+                      value="0"
+                      onClick={handleShippingCost}
+                      required
+                    ></input>
+                    <label
+                      className="form-check-label"
+                      htmlFor="flexRadioDefault1"
+                    >
+                      Retiro en tienda
+                    </label>
+                  </div>
+                  <div className="form-check">
+                    <input
+                      className="form-check-input"
+                      type="radio"
+                      name="flexRadioDefault"
+                      id="flexRadioDefault2"
+                      value="3000"
+                      onClick={handleShippingCost}
+                      required
+                    ></input>
+                    <label
+                      className="form-check-label"
+                      htmlFor="flexRadioDefault2"
+                    >
+                      Envío a domicilio
+                    </label>
+                  </div>
+                </div>
+
+                <h6 className="shipping__adress">Propina</h6>
+                <div className="tip__options">
+                  <div className="form-check">
+                    <input
+                      className="form-check-input"
+                      type="radio"
+                      name="flexRadioDefault"
+                      id="flexRadioDefault3"
+                      value="0"
+                      onClick={handleTipCost}
+                      required
+                    ></input>
+                    <label
+                      className="form-check-label"
+                      htmlFor="flexRadioDefault3"
+                    >
+                      No incluir propina
+                    </label>
+                  </div>
+
+                  <div className="form-check">
+                    <input
+                      className="form-check-input"
+                      type="radio"
+                      name="flexRadioDefault"
+                      id="flexRadioDefault4"
+                      value="0.05"
+                      onClick={handleTipCost}
+                      required
+                    ></input>
+                    <label
+                      className="form-check-label"
+                      htmlFor="flexRadioDefault4"
+                    >
+                      5% de propina
+                    </label>
+                  </div>
+
+                  <div className="form-check">
+                    <input
+                      className="form-check-input"
+                      type="radio"
+                      name="flexRadioDefault"
+                      id="flexRadioDefault5"
+                      value="0.1"
+                      onClick={handleTipCost}
+                      required
+                    ></input>
+                    <label
+                      className="form-check-label"
+                      htmlFor="flexRadioDefault5"
+                    >
+                      10% de propina
+                    </label>
+                  </div>
+                </div>
+
                 <button type="submit" className="addTOCart__btn2">
-                    Finalizar pedido
-                  </button>
+                  Finalizar pedido
+                </button>
               </form>
             </Col>
 
@@ -145,11 +254,14 @@ const Checkout = () => {
                   Subtotal: <span>${cartTotalAmount}</span>
                 </h6>
                 <h6 className="d-flex align-items-center justify-content-between mb-3">
-                  Shipping: <span>${shippingCost}</span>
+                  Propina: <span>${tipAmount}</span>
+                </h6>
+                <h6 className="d-flex align-items-center justify-content-between mb-3">
+                  Costo de envío: <span>${shippingCost}</span>
                 </h6>
                 <div className="checkout__total">
                   <h5 className="d-flex align-items-center justify-content-between">
-                    Total: <span>${totalAmount}</span>
+                    Total a pagar: <span>${totalAmount}</span>
                   </h5>
                 </div>
               </div>

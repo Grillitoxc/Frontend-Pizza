@@ -84,7 +84,6 @@ HELPERS
   background-color: transparent;
   border-radius: 0;
   border: none;
-
   -webkit-appearance: none;
   -moz-appearance: none;
 
@@ -250,4 +249,11 @@ HELPERS
   display: var(--uirLinkDisplay) !important;
   color: var(--uirLinkTextColor) !important;
   text-decoration: var(--uirLinkTextDecoration) !important;
+}
+
+.shipping__adress {
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin: 1rem 0.5rem;
+  color: var(--red-main);
 }

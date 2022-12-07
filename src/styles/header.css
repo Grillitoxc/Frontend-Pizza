@@ -72,14 +72,14 @@ a:link {
 
 .cart__badge {
   position: absolute;
-  top: -6px;
+  top: -10px;
   right: -10px;
   background: var(--red-main);
   color: #fff;
-  width: 15px;
-  height: 15px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 500;
   display: flex;
   align-items: center;
