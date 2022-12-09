@@ -15,7 +15,7 @@ const nav__links = [
   },
   {
     display: "Arma tu pizza",
-    path: "/pizzas",
+    path: "/custom-pizza",
   },
   {
     display: "Tus pedidos",

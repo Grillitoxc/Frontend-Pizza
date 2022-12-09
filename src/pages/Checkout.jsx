@@ -10,7 +10,7 @@ const Checkout = () => {
   const cartTotalAmount = useSelector((state) => state.cart.totalAmount);
   const [shippingCost, setShippingCost] = useState(0);
   const [tipCost, setTipCost] = useState(0);
-  const tipAmount = Number(cartTotalAmount*tipCost)
+  const tipAmount = Number(cartTotalAmount * tipCost);
   const totalAmount = cartTotalAmount + Number(shippingCost) + tipAmount;
 
   const handleShippingCost = (e) => {
@@ -241,6 +241,8 @@ const Checkout = () => {
                     </label>
                   </div>
                 </div>
+
+                <h6 className="Método de pago">Propina</h6>
 
                 <button type="submit" className="addTOCart__btn2">
                   Finalizar pedido
