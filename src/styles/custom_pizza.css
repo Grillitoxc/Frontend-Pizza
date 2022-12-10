@@ -1,0 +1,36 @@
+.meat,
+.vegetables,
+.cheese,
+.cheese__amount,
+.dough,
+.size {
+  display: flex;
+  flex-direction: column;
+  padding-right: 5rem;
+  align-items: left;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.addToCart__Custom {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-left: 19.5rem;
+  background: var(--green-light);
+  color: var(--light);
+  border: none;
+  padding: 3px 5px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  -webkit-transition: all ease 0.5s;
+  -moz-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+}
+
+.addToCart__Custom:hover {
+  background: var(--green-dark1);
+  color: var(--light);
+}

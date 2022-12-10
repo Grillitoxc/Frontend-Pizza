@@ -39,24 +39,30 @@
   }
 }
 
-.addTOCart__btn2 {
+.pay {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-left: 9.5rem;
   background: var(--green-light);
   color: var(--light);
   border: none;
-  padding: 5px 5px;
+  padding: 3px 5px;
   border-radius: 5px;
-  font-size: 1rem;
+  font-size: 1.2rem;
   -webkit-transition: all ease 0.5s;
   -moz-transition: all ease 0.5s;
   transition: all ease 0.5s;
 }
 
-.addTOCart__btn2:hover {
+.pay:hover {
   background: var(--green-dark1);
   color: var(--light);
 }
 
-.addTOCart__btn2 a {
+.pay a {
   color: var(--light);
   background: transparent !important;
 }
@@ -80,13 +86,11 @@ HELPERS
 
 .field__input {
   --uiFieldPlaceholderColor: var(--fieldPlaceholderColor, #767676);
-
   background-color: transparent;
   border-radius: 0;
   border: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-
   font-family: inherit;
   font-size: inherit;
 }
@@ -251,9 +255,27 @@ HELPERS
   text-decoration: var(--uirLinkTextDecoration) !important;
 }
 
-.shipping__adress {
+.title {
   font-size: 1.7rem;
   font-weight: 600;
   margin: 1rem 0.5rem;
   color: var(--red-main);
+}
+
+.sticky__bill {
+  position: sticky;
+  top: 10rem;
+  left: 0;
+}
+
+.receive,
+.tip,
+.payment,
+.delivery {
+  display: flex;
+  flex-direction: column;
+  padding-right: 23.5rem;
+  align-items: left;
+  justify-content: center;
+  margin: 1rem 0;
 }

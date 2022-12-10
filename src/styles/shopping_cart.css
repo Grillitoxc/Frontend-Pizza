@@ -48,6 +48,13 @@
   border-radius: 50%;
   color: var(--light);
   cursor: pointer;
+  -webkit-transition: all ease 0.5s;
+  -moz-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+}
+
+.cart__close span i:hover {
+  background: var(--red-main);
 }
 
 .cart__item__list {

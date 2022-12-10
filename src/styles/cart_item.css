@@ -59,3 +59,11 @@
   font-weight: 600;
   cursor: pointer;
 }
+
+.delete__btn:hover {
+  color: var(--red-main);
+  -webkit-transition: all ease 0.2s;
+  -moz-transition: all ease 0.2s;
+  transition: all ease 0.2s;
+  font-size: 1.8rem;
+}

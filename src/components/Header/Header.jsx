@@ -21,10 +21,6 @@ const nav__links = [
     display: "Tus pedidos",
     path: "/cart",
   },
-  {
-    display: "Contacto",
-    path: "/contact",
-  },
 ];
 
 const Header = () => {
@@ -88,13 +84,13 @@ const Header = () => {
             </span>
 
             <span className="map__icon">
-              <Link to="/login">
+              <Link to="/">
                 <i className="ri-map-pin-line"></i>
               </Link>
             </span>
 
             <span className="user">
-              <Link to="/login">
+              <Link to="/">
                 <i className="ri-user-line"></i>
               </Link>
             </span>

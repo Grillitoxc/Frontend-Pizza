@@ -1,10 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Col, Container, Row } from "reactstrap";
 import CommonSection from "../components/CommonSection";
 import Helmet from "../components/Helmet/Helmet";
 import { useSelector } from "react-redux";
-
+import ToggleButton from "react-bootstrap/ToggleButton";
+import ToggleButtonGroup from "react-bootstrap/ToggleButtonGroup";
+import Swal from "sweetalert2";
 import "../styles/checkout.css";
+import { Link } from "react-router-dom";
+
+function formAlert() {
+  let timerInterval;
+  Swal.fire({
+    icon: "success",
+    title: "¡Compra finalizada!",
+    timer: 1200,
+    confirmButtonColor: "#15aa49",
+    timerProgressBar: true,
+    didOpen: () => {
+      const b = Swal.getHtmlContainer().querySelector("b");
+      timerInterval = setInterval(() => {
+        b.textContent = Swal.getTimerLeft();
+      }, 100);
+    },
+    willClose: () => {
+      clearInterval(timerInterval);
+    },
+  }).then((result) => {
+    if (result.dismiss === Swal.DismissReason.timer) {
+      console.log("I was closed by the timer");
+    }
+  });
+}
 
 const Checkout = () => {
   const cartTotalAmount = useSelector((state) => state.cart.totalAmount);
@@ -23,6 +50,22 @@ const Checkout = () => {
     setTipCost(e.target.value);
   };
 
+  const payRef = useRef(null);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (
+        document.body.scrollTop > 250 ||
+        document.documentElement.scrollTop > 250
+      ) {
+        payRef.current.classList.add("sticky__bill");
+      } else {
+        payRef.current.classList.remove("sticky__bill");
+      }
+    });
+    return () => window.removeEventListener("scroll", null);
+  }, []);
+
   return (
     <Helmet title=" - Pago">
       <CommonSection title="Finalizando pedido" />
@@ -30,8 +73,8 @@ const Checkout = () => {
         <Container>
           <Row>
             <Col lg="8" md="6">
-              <h6 className="shipping__adress">Datos de envío</h6>
-              <form className="checkout__form">
+              <h6 className="title">Datos de envío</h6>
+              <form className="checkout__form" onSubmit={formAlert}>
                 <div className="page">
                   <div className="field field_v2">
                     <label htmlFor="first-name" className="ha-screen-reader">
@@ -147,111 +190,109 @@ const Checkout = () => {
                 </div>
 
                 {/* ========= checks ========= */}
-                <h6 className="shipping__adress">Tipo de envío</h6>
-                <div className="delivery__options">
-                  <div className="form-check">
-                    <input
-                      className="form-check-input"
-                      type="radio"
-                      name="flexRadioDefault"
-                      id="flexRadioDefault1"
+                <h6 className="title">Tipo de envío</h6>
+                <div className="delivery">
+                  <ToggleButtonGroup
+                    type="radio"
+                    name="delivery__options"
+                    defaultValue="0"
+                  >
+                    <ToggleButton
+                      id="tbg-radio-1"
                       value="0"
-                      onClick={handleShippingCost}
-                      required
-                    ></input>
-                    <label
-                      className="form-check-label"
-                      htmlFor="flexRadioDefault1"
+                      onChange={handleShippingCost}
+                      variant="danger"
                     >
                       Retiro en tienda
-                    </label>
-                  </div>
-                  <div className="form-check">
-                    <input
-                      className="form-check-input"
-                      type="radio"
-                      name="flexRadioDefault"
-                      id="flexRadioDefault2"
+                    </ToggleButton>
+                    <ToggleButton
+                      id="tbg-radio-2"
                       value="3000"
-                      onClick={handleShippingCost}
-                      required
-                    ></input>
-                    <label
-                      className="form-check-label"
-                      htmlFor="flexRadioDefault2"
+                      onChange={handleShippingCost}
+                      variant="danger"
                     >
                       Envío a domicilio
-                    </label>
-                  </div>
+                    </ToggleButton>
+                  </ToggleButtonGroup>
                 </div>
 
-                <h6 className="shipping__adress">Propina</h6>
-                <div className="tip__options">
-                  <div className="form-check">
-                    <input
-                      className="form-check-input"
-                      type="radio"
-                      name="flexRadioDefault"
-                      id="flexRadioDefault3"
+                <h6 className="title">Propina</h6>
+                <div className="tip">
+                  <ToggleButtonGroup
+                    type="radio"
+                    name="tip__options"
+                    defaultValue="0"
+                  >
+                    <ToggleButton
+                      id="tbg-radio-3"
                       value="0"
-                      onClick={handleTipCost}
-                      required
-                    ></input>
-                    <label
-                      className="form-check-label"
-                      htmlFor="flexRadioDefault3"
+                      onChange={handleTipCost}
+                      variant="danger"
                     >
                       No incluir propina
-                    </label>
-                  </div>
-
-                  <div className="form-check">
-                    <input
-                      className="form-check-input"
-                      type="radio"
-                      name="flexRadioDefault"
-                      id="flexRadioDefault4"
+                    </ToggleButton>
+                    <ToggleButton
+                      id="tbg-radio-4"
                       value="0.05"
-                      onClick={handleTipCost}
-                      required
-                    ></input>
-                    <label
-                      className="form-check-label"
-                      htmlFor="flexRadioDefault4"
+                      onChange={handleTipCost}
+                      variant="danger"
                     >
                       5% de propina
-                    </label>
-                  </div>
-
-                  <div className="form-check">
-                    <input
-                      className="form-check-input"
-                      type="radio"
-                      name="flexRadioDefault"
-                      id="flexRadioDefault5"
+                    </ToggleButton>
+                    <ToggleButton
+                      id="tbg-radio-5"
                       value="0.1"
-                      onClick={handleTipCost}
-                      required
-                    ></input>
-                    <label
-                      className="form-check-label"
-                      htmlFor="flexRadioDefault5"
+                      onChange={handleTipCost}
+                      variant="danger"
                     >
                       10% de propina
-                    </label>
-                  </div>
+                    </ToggleButton>
+                  </ToggleButtonGroup>
                 </div>
 
-                <h6 className="Método de pago">Propina</h6>
+                <h6 className="title">Método de pago</h6>
+                <div className="payment">
+                  <ToggleButtonGroup
+                    type="radio"
+                    name="payment__options"
+                    defaultValue="0"
+                  >
+                    <ToggleButton id="tbg-radio-6" value="0" variant="danger">
+                      Webpay
+                    </ToggleButton>
+                    <ToggleButton id="tbg-radio-7" value="1" variant="danger">
+                      Efectivo
+                    </ToggleButton>
+                    <ToggleButton id="tbg-radio-8" value="2" variant="danger">
+                      Tarjeta (débito o crédito)
+                    </ToggleButton>
+                  </ToggleButtonGroup>
+                </div>
 
-                <button type="submit" className="addTOCart__btn2">
+                <h6 className="title">Tipo de recibo</h6>
+                <div className="receive">
+                  <ToggleButtonGroup
+                    type="radio"
+                    name="receive__options"
+                    defaultValue="0"
+                  >
+                    <ToggleButton id="tbg-radio-9" value="0" variant="danger">
+                      Boleta
+                    </ToggleButton>
+                    <ToggleButton id="tbg-radio-10" value="1" variant="danger">
+                      Factura
+                    </ToggleButton>
+                  </ToggleButtonGroup>
+                </div>
+
+                <button type="submit" className="pay">
                   Finalizar pedido
                 </button>
               </form>
             </Col>
 
             <Col lg="4" md="6">
-              <div className="checkout__bill">
+              <div className="checkout__bill" ref={payRef}>
                 <h6 className="d-flex align-items-center justify-content-between mb-3">
                   Subtotal: <span>${cartTotalAmount}</span>
                 </h6>
